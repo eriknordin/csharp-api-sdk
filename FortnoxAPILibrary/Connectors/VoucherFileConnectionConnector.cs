@@ -45,7 +45,11 @@ namespace FortnoxAPILibrary.Connectors
 		/// <returns>The created voucher file connection</returns>
 		public VoucherFileConnection Create(VoucherFileConnection voucherFileConnection)
 		{
-			return base.BaseCreate(voucherFileConnection);
+            return BaseCreate(voucherFileConnection, new Dictionary<string, string>
+            {
+                { "financialyear", voucherFileConnection.VoucherYear }
+            });
+            //return base.BaseCreate(voucherFileConnection);
 		}
 
 		/// <summary>
